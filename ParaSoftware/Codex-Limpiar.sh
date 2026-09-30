@@ -41,6 +41,7 @@ set -euo pipefail
       "skills"
       "sqlite"
       "thread-writer-locks"
+      "tui-thread-reference-capabilities"
       "tmp"
       "vendor_imports"
       "visualizations"
