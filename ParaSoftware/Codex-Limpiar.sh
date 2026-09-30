@@ -106,6 +106,9 @@ set -euo pipefail
   echo 'model_auto_compact_token_limit = 900000'  | tee -a "$cBaseDir"/config.toml
   echo 'service_tier = "default"'                 | tee -a "$cBaseDir"/config.toml
 
+# Reinstalar codex
+  sh -c 'curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh'
+
 # Listar los archivos remanentes de la carpeta
   echo ""
   echo "  Archivos remanentes en la carpeta $cBaseDir/ :"
