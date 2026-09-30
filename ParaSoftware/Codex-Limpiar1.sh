@@ -99,14 +99,18 @@ set -euo pipefail
     done
 
 # Recrear el archivo config.toml
+  echo ""
+  echo "  Creando desde cero el archivo de configuración..."
+  echo ""
   echo 'model = "gpt-6-astra"'                    | tee    "$cBaseDir"/config.toml
   echo 'model_reasoning_effort = "xhigh"'         | tee -a "$cBaseDir"/config.toml
   echo 'plan_mode_reasoning_effort = "max"'       | tee -a "$cBaseDir"/config.toml
   echo 'model_context_window = 1000000'           | tee -a "$cBaseDir"/config.toml
   echo 'model_auto_compact_token_limit = 900000'  | tee -a "$cBaseDir"/config.toml
   echo 'service_tier = "default"'                 | tee -a "$cBaseDir"/config.toml
+  echo ""
 
-# Reinstalar codex
+# Reinstalar o actualizar codex
   sh -c 'curl -fsSL https://chatgpt.com/codex/install.sh | CODEX_NON_INTERACTIVE=1 sh'
 
 # Listar los archivos remanentes de la carpeta
